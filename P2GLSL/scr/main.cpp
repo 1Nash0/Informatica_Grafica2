@@ -11,13 +11,13 @@
 int objId =-1;
 
 
-// Variables para la cámara
+// Variables para la cï¿½mara
 glm::mat4 view = glm::mat4(1.0f); // Matriz de vista inicial
-float alpha = 0.10f; // Ángulo de rotación
+float alpha = 0.10f; // ï¿½ngulo de rotaciï¿½n
 float inc = 0.1f;    // Incremento para zoom
 
 
-//Declaración de CB
+//Declaraciï¿½n de CB
 void resizeFunc(int width, int height);
 void idleFunc();
 void keyboardFunc(unsigned char key, int x, int y);
@@ -28,9 +28,9 @@ void mouseMotionFunc(int x, int y);
 int main(int argc, char** argv)
 {
 	std::locale::global(std::locale("spanish"));// acentos ;)
-	if (!IGlib::init("../shaders_P2/shader.LuzFocal.vert", "../shaders_P2/shader.LuzFocal.frag"))
+	if (!IGlib::init("../shaders_P2/shader.AtenuarLuz.vert", "../shaders_P2/shader.AtenuarLuz.frag"))
 		return -1;
-  //Se ajusta la cámara
+  //Se ajusta la cï¿½mara
 	//Si no se da valor se cojen valores por defecto
 	view[3].z = -6;
 
@@ -74,7 +74,7 @@ int main(int argc, char** argv)
 
 void resizeFunc(int width, int height)
 {
-	//Ajusta el aspect ratio al tamaño de la venta
+	//Ajusta el aspect ratio al tamaï¿½o de la venta
 }
 
 void idleFunc()
@@ -117,15 +117,15 @@ void keyboardFunc(unsigned char key, int x, int y)
 void mouseFunc(int button, int state, int x, int y)
 {
 	if (state==0)
-		std::cout << "Se ha pulsado el botón ";
+		std::cout << "Se ha pulsado el botï¿½n ";
 	else
-		std::cout << "Se ha soltado el botón ";
+		std::cout << "Se ha soltado el botï¿½n ";
 	
-	if (button == 0) std::cout << "de la izquierda del ratón " << std::endl;
-	if (button == 1) std::cout << "central del ratón " << std::endl;
-	if (button == 2) std::cout << "de la derecha del ratón " << std::endl;
+	if (button == 0) std::cout << "de la izquierda del ratï¿½n " << std::endl;
+	if (button == 1) std::cout << "central del ratï¿½n " << std::endl;
+	if (button == 2) std::cout << "de la derecha del ratï¿½n " << std::endl;
 
-	std::cout << "en la posición " << x << " " << y << std::endl << std::endl;
+	std::cout << "en la posiciï¿½n " << x << " " << y << std::endl << std::endl;
 }
 
 void mouseMotionFunc(int x, int y)

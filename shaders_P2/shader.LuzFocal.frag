@@ -17,8 +17,6 @@ vec3 Ia = vec3(0.1);
 vec3 Il = vec3(1);
 //uniform vec3 pl;
 vec3 pl = vec3(0);
-float range = 10.0;  // Rango de la luz para la atenuación
-
 
 //Luz Focal
 float cosTheta = 0.52532; //Coseno del angulo de apertura
@@ -41,38 +39,34 @@ vec3 shade()
 		//amb
 		color += Ia * Ka;
 
-		//diff
 		vec3 N = normalize(no);
 		vec3 L = normalize(pl-po);
 		float d = length(pl - po);
-		float attenuation = max(0.0, 1.0 - pow(d / range, 2));
+		float attenuation = pow(1/max(d,0.1), 2);
 		
 
-	if(cosTheta < dot(-L,D))		//Comprobamos si el objeto está dentro
+	if(cosTheta < dot(-L,D))		//Comprobamos si esta dentro del haz de luz
 	{ 
 		fdir = pow(max(((dot(-L,D)-cosTheta)/1-cosTheta),0),m);
-
-	}else
-	{
+	} 
+	else {
 		fdir = 0;
 	}
-		color += fdir * attenuation * Il * Kd * (max(dot (N,L),0));
+		
+	//diff
+	color += fdir * attenuation * Il * Kd * (max(dot (N,L),0));
 
-		//spec
-		vec3 V = normalize(-po);
-		vec3 R = reflect(-L,N);
+	//spec
+	vec3 V = normalize(-po);
+	vec3 R = reflect(-L,N);
 
-		color += fdir * attenuation* Il * Ks * pow (max(dot(V,R),0),n);
-
-
-
+	color += fdir * attenuation* Il * Ks * pow (max(dot(V,R),0),n);
 
 	//emi
 	color += Ke;
 
 	return color;
 }
-
 
 
 void main()
