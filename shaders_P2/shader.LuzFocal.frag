@@ -10,17 +10,16 @@ uniform sampler2D colorTex;
 uniform sampler2D specularTex;
 uniform sampler2D emiTex;
 
-//Fuente de luz////
+//Fuente de luz
 //uniform vec3 Ia; //prop. escena
 vec3 Ia = vec3(0.1);
 //uniform vec3 Il; //prop. fuente de luz
-vec3 Il = vec3(1);
+vec3 Il = vec3(1);    
 //uniform vec3 pl;
 vec3 pl = vec3(0);
 
 //Luz Focal
 float cosTheta = 0.52532; //Coseno del angulo de apertura
-float m = 2;
 float fdir;
 
 
@@ -34,7 +33,7 @@ float n;
 vec3 shade()
 {
 	vec3 color = vec3(0);
-	vec3 D = normalize(vec3(0,0,-6));  //Direccion de la luz desde el COP
+	vec3 D = vec3(0, 0, -6);  //Direccion de la luz desde el COP
 
 		//amb
 		color += Ia * Ka;
@@ -47,7 +46,7 @@ vec3 shade()
 
 	if(cosTheta < dot(-L,D))		//Comprobamos si esta dentro del haz de luz
 	{ 
-		fdir = pow(max(((dot(-L,D)-cosTheta)/1-cosTheta),0),m);
+		fdir = pow(max(((dot(-L,D)-cosTheta)/1-cosTheta),0),2);
 	} 
 	else {
 		fdir = 0;

@@ -12,7 +12,7 @@ uniform sampler2D emiTex;
 
 // Fuente de luz
 vec3 Ia = vec3(0.1); 
-vec3 Il = vec3(1.8); 
+vec3 Il = vec3(8); 
 vec3 pl = vec3(0);  
 
 // Propiedades del objeto
@@ -27,7 +27,7 @@ vec3 shade()
     vec3 color = vec3(0);
 
     //amb
-    color += Ia * Ka; ///
+    color += Ia * Ka;
 
     //diff
     vec3 N = normalize(no);
