@@ -32,7 +32,7 @@ vec3 shade()
 
 	//diff
 	vec3 N = normalize(no);
-	vec3 D = vec3(0.0, 0.1, 0.0); 
+	vec3 D = vec3(0.0, -1.0, 0.0); 
 	vec3 L = -D;
 	L = normalize(L); 
 	color += Il * Kd * (max(dot (N,L),0));
