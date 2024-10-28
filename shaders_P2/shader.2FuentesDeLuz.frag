@@ -20,7 +20,7 @@ vec3 pl = vec3(-1 ,-1, -5);
 
 // Segunda fuente de luz
 vec3 Il2 = vec3(1.0);  // Intensidad de la segunda luz
-vec3 pl2 = vec3(1, 1, -5); // Posición de la segunda luz
+vec3 pl2 = vec3(1, 2, -5); // Posición de la segunda luz
 
 //Objecto
 vec3 Ka;

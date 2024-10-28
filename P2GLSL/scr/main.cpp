@@ -28,7 +28,7 @@ void mouseMotionFunc(int x, int y);
 int main(int argc, char** argv)
 {
 	std::locale::global(std::locale("spanish"));// acentos ;)
-	if (!IGlib::init("../shaders_P2/shader.AtenuarLuz.vert", "../shaders_P2/shader.AtenuarLuz.frag"))
+	if (!IGlib::init("../shaders_P2/shader.v2.vert", "../shaders_P2/shader.LuzDireccional.frag"))
 		return -1;
   //Se ajusta la c�mara
 	//Si no se da valor se cojen valores por defecto
@@ -81,7 +81,7 @@ void idleFunc()
 {
 	glm::mat4 modelMat(1.0f);
 	static float angle = 0.0f;
-	angle = (angle > 3.141592f * 2.0f) ? 0 : angle + 0.01f;
+	angle = (angle > 3.141592f * 2.0f) ? 0 : angle + 0.001f;
 	
 	modelMat = glm::rotate(modelMat, angle, glm::vec3(1.0f, 1.0f, 0.0f));
 
