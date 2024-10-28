@@ -27,7 +27,7 @@ vec3 shade()
     vec3 color = vec3(0);
 
     //amb
-    color += Ia * Ka;
+    color += Ia * Ka; ///
 
     //diff
     vec3 N = normalize(no);

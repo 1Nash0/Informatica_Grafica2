@@ -10,7 +10,7 @@ uniform sampler2D colorTex;
 uniform sampler2D specularTex;
 uniform sampler2D emiTex;
 
-//Fuente de luz
+//Fuente de luz////
 //uniform vec3 Ia; //prop. escena
 vec3 Ia = vec3(0.1);
 //uniform vec3 Il; //prop. fuente de luz
