@@ -14,7 +14,7 @@ uniform sampler2D emiTex;
 //uniform vec3 Ia; //prop. escena
 vec3 Ia = vec3(0.1);
 //uniform vec3 Il; //prop. fuente de luz
-vec3 Il = vec3(1);    
+vec3 Il = vec3(0.9);    
 //uniform vec3 pl;
 vec3 pl = vec3(0);
 

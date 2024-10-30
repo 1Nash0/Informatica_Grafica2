@@ -12,8 +12,8 @@ uniform sampler2D emiTex;
 
 // Fuente de luz
 vec3 Ia = vec3(0.1); 
-vec3 Il = vec3(8); 
-vec3 pl = vec3(0);  
+vec3 Il = vec3(1.0); 
+vec3 pl = vec3(0.0);  
 
 // Propiedades del objeto
 vec3 Ka; 
